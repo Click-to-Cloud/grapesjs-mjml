@@ -12,6 +12,7 @@ export default (editor, opt = {}) => {
   let setUserContextCommand = require('./command-set-user-context');
   let saveUserBlockCommand = require('./command-save-user-block');
   let deleteUserBlockCommand = require('./command-delete-user-block');
+  let logoutCommand = require('./command-logout');
 
   cmd.add('mjml-import', importCommand.default(editor, opt));
   cmd.add(exportName, exportCommand.default(editor, opt));
@@ -24,4 +25,5 @@ export default (editor, opt = {}) => {
   cmd.add('mjml-set-user-context', setUserContextCommand.default(editor, opt));
   cmd.add('mjml-save-user-block', saveUserBlockCommand.default(editor, opt));
   cmd.add('mjml-delete-user-block', deleteUserBlockCommand.default(editor, opt));
+  cmd.add('mjml-logout', logoutCommand.default(editor, opt));
 }

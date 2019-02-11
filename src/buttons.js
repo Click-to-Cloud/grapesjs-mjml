@@ -53,4 +53,10 @@ export default (editor, opt = {}) => {
     });
   }
 
+  pnm.addButton('options', {
+    id: 'mjml-logout',
+    className: 'fa fa-sign-out',
+    command: 'mjml-logout',
+    attributes: { title: 'Logout' }
+  });
 }
