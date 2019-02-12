@@ -123,6 +123,12 @@ $ npm link grapesjs
 $ npm run
 ```
 
+Install dist/grapesjs-mjml.js
+
+```sh
+webpack --env.development
+```
+
 ## License
 
 BSD 3-Clause
