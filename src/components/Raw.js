@@ -1,5 +1,5 @@
 // Specs: https://mjml.io/documentation/#mjml-raw
-const ImagePattern = /(<img[^>]*>)(?![\s]*?<\/)/g;
+const ImagePattern = /(<img[^>]*>)(?![\s]*?<\/img>)/g;
 
 export default (editor, {
   dc, opt, defaultModel, defaultView, coreMjmlModel, coreMjmlView
