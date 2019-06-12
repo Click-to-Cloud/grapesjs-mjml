@@ -127,7 +127,7 @@ export default (code = '', context = {}, userContext = {}) => {
       return code;
   }
 
-  const allContext = mergeContext(context, userContext);
+  const allContext = mergeContext(context, userContext.variables);
 
   const doc = parser.parseFromString(code,"text/xml");
   return toCode(doc.children[0], allContext)[0];
