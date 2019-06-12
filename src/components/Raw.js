@@ -1,4 +1,5 @@
 // Specs: https://mjml.io/documentation/#mjml-raw
+const ImagePattern = /(<img[^>]*>)(?!<\/)/g;
 
 export default (editor, {
   dc, opt, defaultModel, defaultView, coreMjmlModel, coreMjmlView
@@ -40,6 +41,10 @@ export default (editor, {
 
       toHTML() {
         let tagName = this.get('tagName');
+
+        const content = this.get('content');
+        const newContent = (content || '').replace(ImagePattern, (m, p1) => p1 + '</img>');
+        this.set('content', newContent);
 
         return `<${tagName}>${this.get('content')}</${tagName}>`;
       },

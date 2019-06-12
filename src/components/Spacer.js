@@ -16,7 +16,6 @@ export default (editor, {
         droppable: false,
         'style-default': { height: '20px' },
         stylable: ['height'],
-        void: true,
       },
     },{
 
