@@ -89,7 +89,12 @@ export default (editor, {
         editor.addComponents(`<style>${mjmlResult.style}</style>`);
         this.getChildrenContainer().innerHTML = this.model.get('content');
         this.renderChildren();
-        this.el.style = this.el.getAttribute('style') + this.attributes.style;
+        var style = this.el.getAttribute('style') + this.attributes.style;
+        var previewHelper = document.querySelectorAll('.fa-eye-slash')[0];
+        if(previewHelper && previewHelper.style.display === 'inline-block') {
+          style += 'padding:0;';
+        }
+        this.el.style = style;
         return this;
       },
 

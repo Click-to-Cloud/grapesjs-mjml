@@ -63,12 +63,6 @@ export default (editor, opt = {}) => {
     },
 
     stop(editor, sender) {
-      if(compiled) {
-        editor.DomComponents.getWrapper().set('content', '');
-        editor.setComponents(originalCode);
-        compiled = false;
-      }
-
       var panels = this.getPanels(editor);
       editor.runCommand('sw-visibility');
       editor.getModel().runDefault();
@@ -80,6 +74,12 @@ export default (editor, opt = {}) => {
       }
       editor.trigger('change:canvasOffset');
       this.tglPointers(editor, 1);
+
+      if(compiled) {
+        editor.DomComponents.getWrapper().set('content', '');
+        editor.setComponents(originalCode);
+        compiled = false;
+      }
     }
 
   }
