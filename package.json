@@ -34,7 +34,9 @@
     "grapesjs": "0.x"
   },
   "dependencies": {
-    "mjml": "^3.3.5"
+    "mjml": "^3.3.5",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.25"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

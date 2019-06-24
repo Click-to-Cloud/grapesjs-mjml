@@ -27,6 +27,18 @@ function evalInContext(js, context = {}) {
                 return prev || item;
               }, false);
             }
+            function formatCurrency(amount, code) {
+                var formattedCode = code || '$';
+                var formattedAmount = new Number(amount).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+                return formattedCode + formattedAmount;
+            }
+            function formatDatetime(datetime, format, timezone) {
+                var m = moment(datetime);
+                if(timezone) {
+                    m = m.tz(timezone);
+                }
+                return m.format(format);
+            }
             ;${js}
         `);
       }.call(context);
