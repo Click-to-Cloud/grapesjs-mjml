@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 const parser = new DOMParser();
 
 function evalInContext(js, context = {}) {
