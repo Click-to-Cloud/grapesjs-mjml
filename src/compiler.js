@@ -31,7 +31,7 @@ function evalInContext(js, context = {}) {
             }
             function formatCurrency(amount, code) {
                 var formattedCode = code || '$';
-                var formattedAmount = new Number(amount).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+                var formattedAmount = new Number(amount).toFixed(2).replace(/\\d(?=(\\d{3})+\\.)/g, '$&,');
                 return formattedCode + formattedAmount;
             }
             function formatDatetime(datetime, format, timezone) {
