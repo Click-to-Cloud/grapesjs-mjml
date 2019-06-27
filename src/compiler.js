@@ -29,9 +29,11 @@ function evalInContext(js, context = {}) {
                 return prev || item;
               }, false);
             }
-            function formatCurrency(amount, code) {
-                var formattedCode = code || '$';
-                var formattedAmount = new Number(amount).toFixed(2).replace(/\\d(?=(\\d{3})+\\.)/g, '$&,');
+            function formatCurrency(amount, options) {
+                options = options || {};
+                var formattedCode = options.code || '$';
+                var fixed = options.fixed || 0;
+                var formattedAmount = new Number(amount).toFixed(fixed).replace(/\\d(?=(\\d{3})+\\.)/g, '$&,');
                 return formattedCode + formattedAmount;
             }
             function formatDatetime(datetime, format, timezone) {
