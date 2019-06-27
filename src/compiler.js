@@ -33,7 +33,11 @@ function evalInContext(js, context = {}) {
                 options = options || {};
                 var formattedCode = options.code || '$';
                 var fixed = options.fixed || 0;
-                var formattedAmount = new Number(amount).toFixed(fixed).replace(/\\d(?=(\\d{3})+\\.)/g, '$&,');
+                var formattedAmount = new Number(amount).toFixed(fixed || 2).replace(/\\d(?=(\\d{3})+\\.)/g, '$&,');
+                if(!fixed) {
+                    var pos = formattedAmount.lastIndexOf('.');
+                    formattedAmount = formattedAmount.substring(0, pos);
+                }
                 return formattedCode + formattedAmount;
             }
             function formatDatetime(datetime, format, timezone) {
