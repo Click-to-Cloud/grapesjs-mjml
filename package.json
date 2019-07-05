@@ -34,6 +34,7 @@
     "grapesjs": "0.x"
   },
   "dependencies": {
+    "lodash": "^4.17.11",
     "mjml": "^3.3.5",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.25"
