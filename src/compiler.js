@@ -61,6 +61,9 @@ function evalInContext(js, context = {}) {
 function renderNode(node, context) {
   const attrs = [];
   for(let attrName of node.getAttributeNames()) {
+    if(attrName.startsWith('data-')) {
+      continue;
+    }
     const attrValue = evalText(node.getAttribute(attrName), context);
     attrs.push(`${attrName}="${attrValue}"`);
   }
