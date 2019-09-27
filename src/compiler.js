@@ -7,6 +7,7 @@ function evalInContext(js, context = {}) {
   try {
     return function() {
         return eval(`
+            const require = () => undefined;
             var $Data = this;
             function lt(a, b) {
               return a < b;
